@@ -1,0 +1,36 @@
+#!/bin/bash
+#run script
+cd  postsrc
+
+#if [ $# -eq 0 ];
+#then
+                echo "<attribute>" > ../config/new.xml
+                stat -c%Y" "%n `ls`|awk '{print "<file><time>"$1"</time>","<name>"$2"</name></file>"}'>>../config/new.xml
+                echo "</attribute>" >>../config/new.xml
+
+#elif [ $1 = "all" ]
+#then
+#                echo "<attribute>" > ../config/new.xml
+#                stat -c%Y" "%n `ls`|awk '{print "<file><time>"$1"</time>","<name>"$2"</name></file>"}'>>../config/new.xml
+#                echo "</attribute>" >>../config/new.xml
+#else
+#        echo "wrong arguments"
+#fi
+
+cd ..
+
+
+if [ $# -eq 0 ]
+then
+                sbt "run no"
+elif [ $1 = "new" ]
+then
+                sbt "run new"
+else: 
+fi
+       
+
+mv ./config/new.xml config/old.xml
+
+
+

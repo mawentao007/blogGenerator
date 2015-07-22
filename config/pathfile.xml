@@ -1,0 +1,5 @@
+<path>
+        <templetePath>./src/main/templete/</templetePath>
+        <productPath>./posts/</productPath>
+        <sourcePath>./postsrc/</sourcePath>
+</path>
